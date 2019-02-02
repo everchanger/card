@@ -1,55 +1,70 @@
+<?php 
+$navLinksLeft = [
+   [
+      'view' => 'templates',
+      'display' => 'Mallar'
+   ],
+   [
+      'view' => 'about',
+      'display' => 'Om'
+   ],
+   [
+      'view' => 'style',
+      'display' => 'Stajl'
+   ]
+];
+
+$navLinksRight = [
+   [
+      'view' => 'help',
+      'display' => 'Hjälp'
+   ]
+];
+?>
+
 <!doctype html>
-	<html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/base.css">
-		<link rel="stylesheet" href="css/margin.css">
-		<link rel="stylesheet" href="css/padding.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="icon" href="../../../../favicon.ico">
-		<title>Placeringskort</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-		<a class="navbar-brand" href="?view=home">Placeringskort</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="dist/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="icon" href="../../../../favicon.ico">
+      <title>Placeringskort</title>
+   </head>
+   <body>
+      <nav class="flex items-center justify-between flex-wrap bg-grey p-6">
+         
+         <div class="flex items-center flex-no-shrink text-white mr-6 text-lg">
+            <a href="?view=home" class="font-semibold text-xl tracking-tight text-grey-lighter hover:text-white">Card</a>
+         </div>
+         <div id="hamburger-button" class="block sm:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-grey-lighter border-grey-light hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Meny</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+         </div>
+         <div id="mobile-menu" class="w-full block hidden flex-grow sm:flex sm:items-center sm:w-auto">
+            <div class="sm:flex-grow">
+               <?php foreach($navLinksLeft as $nav): ?>
+               <a class="block mt-4 sm:inline-block sm:mt-0 hover:text-white mr-4 font-semibold <?= $view_file_name === $nav['view'] ? 'text-white' : 'text-grey-lighter' ?>""  href="?view=<?= $nav['view'] ?>"><?= $nav['display'] ?></a>
+               <?php endforeach; ?>
+            </div>
+            <div>
+            <?php foreach($navLinksRight as $nav): ?>
+               <a class="block mt-4 sm:inline-block sm:mt-0 hover:text-white mr-4 font-semibold <?= $view_file_name === $nav['view'] ? 'text-white' : 'text-grey-lighter' ?>""  href="?view=<?= $nav['view'] ?>"><?= $nav['display'] ?></a>
+               <?php endforeach; ?>
+            </div>
+         </div>
+      </nav>
 
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link <?= $view_file_name === 'tempaltes' ? 'active' : '' ?>" href="?view=templates">Mallar</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link <?= $view_file_name === 'about' ? 'active' : '' ?>" href="?view=about">Om</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link <?= $view_file_name === 'style' ? 'active' : '' ?>" href="?view=style">Stajl</a>
-				</li>
-			</ul>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link <?= $view_file_name === 'help' ? 'active' : '' ?>" href="?view=help">Hjälp</a>
-				</li>
-			</ul>
-		</div>
-		</nav>
-
-		<main role="main" class="container-fluid">
-			<?php include 'view/'.$view_file_name.'.html';?>
-		</main>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-	</body>
+      <main role="main" class="container mx-auto pt-4">
+         <?php include 'view/'.$view_file_name.'.html';?>
+      </main>
+      <!-- JavaScript -->
+      <script type="text/javascript" src="js/common.js"></script>
+   </body>
 </html>

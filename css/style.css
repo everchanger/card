@@ -1,0 +1,29 @@
+html
+{
+	height: 100%;
+}
+
+body 
+{
+	height: 100%;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	background-color: #f8f8f8;
+}
+
+main {
+}
+
+a {
+   text-decoration: none;
+}
+
+@tailwind preflight;
+
+@tailwind components;
+
+/*
+   Add custom components here :)
+*/
+
+@tailwind utilities;
