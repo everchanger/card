@@ -20,5 +20,12 @@
          <i class="fas fa-print text-3xl my-4"></i>
          <span class="mb-4 ">4 ) Skriv ut!</span>
       </div>
-	</div>
+   </div>
+   <form class="w-full bg-blue h-16 flex items-center" method="post" action="?controller=template&action=render">
+      <div class="w-full flex justify-around">
+         <input type="text" value="Joakim Rosenstam" name="name" />
+         <input type="text" value="1" name="template_id" />
+         <button class="bg-grey border-black" type="submit">Skicka</button>
+      </div>
+   </form>
 </div>
