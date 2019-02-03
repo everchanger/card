@@ -62,7 +62,7 @@ $navLinksRight = [
       </nav>
 
       <main role="main" class="container mx-auto pt-4">
-         <?php include 'view/'.$view_file_name.'.html';?>
+         <?php include $view_file_name;?>
       </main>
       <!-- JavaScript -->
       <script type="text/javascript" src="js/common.js"></script>
