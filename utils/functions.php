@@ -66,29 +66,31 @@ function respondWithStatus($message = 'OK', $status = 200)
    exit;
 }
 
-function renderTemplate($template, $renderPhp = false) {
+function renderTemplate($template, $names, $landscape, $preview = false) {
+   $orientation = $landscape ? 'landscape' : 'portrait';
+   $pages = 3;
    ob_start(); 
 
    // Load template
-   include 'uploads/templates/' . $template . '.php';
+   include 'uploads/templates/base.php';
 
-   if($renderPhp) {
-      // instantiate and use the dompdf class
-      $dompdf = new \Dompdf\Dompdf();
-      $dompdf->set_option('isHtml5ParserEnabled', true);
-      $dompdf->load_html(ob_get_clean()); 
-
-      // (Optional) Setup the paper size and orientation
-      $dompdf->setPaper('A4', 'landscape');
-
-      // Render the HTML as PDF
-      $dompdf->render();
-
-      // Output the generated PDF to Browser
-      $dompdf->stream();
-   } else {
+   if($preview) {
       return ob_get_clean();
    }
+
+   // instantiate and use the dompdf class
+   $dompdf = new \Dompdf\Dompdf();
+   $dompdf->set_option('isHtml5ParserEnabled', true);
+   $dompdf->load_html(ob_get_clean()); 
+
+   // (Optional) Setup the paper size and orientation
+   $dompdf->setPaper('A4', $orientation);
+
+   // Render the HTML as PDF
+   $dompdf->render();
+
+   // Output the generated PDF to Browser
+   $dompdf->stream();
 }
 
 ?>

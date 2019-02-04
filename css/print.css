@@ -1,0 +1,30 @@
+@page { margin: 0px; }
+body { margin: 0px; }
+
+.preview-page {
+   background: white;
+   display: block;
+   margin: 0 auto;
+   margin-bottom: 0.32cm;
+   margin-top: 10px;
+   padding-top: 1px; /* IMPORTANT */
+   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+.preview-portrait {
+   width: 21cm;
+   height: 29.7cm;
+}
+
+.preview-landscape {
+   height: 21cm;
+   width: 29.7cm;
+}
+
+.page {
+   page-break-after: always;
+}
+
+.page:last-child {
+   page-break-after: avoid;
+}

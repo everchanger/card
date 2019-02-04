@@ -23,8 +23,14 @@
    </div>
    <form class="w-full bg-blue h-16 flex items-center" method="post" action="?controller=template&action=render">
       <div class="w-full flex justify-around">
-         <input type="text" value="Joakim Rosenstam" name="name" />
+         <input type="text" value="Funkster McFunky" name="name" />
          <input type="text" value="1" name="template_id" />
+         <label> Preview
+         <input type="checkbox" value="1" checked name="preview" />
+         </label>
+         <label> Landscape
+         <input type="checkbox" value="1" checked name="landscape" />
+         </label>
          <button class="bg-grey border-black" type="submit">Skicka</button>
       </div>
    </form>
