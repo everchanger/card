@@ -1,3 +1,4 @@
+<?php $templateDirectory = './uploads/templates'; ?>
 <div class="flex flex-col items-center" >
    <div class="bg-grey-dark rounded text-grey-light p-5 w-4/5 mb-4">
       <h1 class="text-center text-lg mb-2">Placeringskort</h1>
@@ -21,17 +22,22 @@
          <span class="mb-4 ">4 ) Skriv ut!</span>
       </div>
    </div>
-   <form class="w-full bg-blue h-16 flex items-center" method="post" action="?controller=template&action=render">
+   <?php /*<form class="w-full bg-grey-darkest h-16 flex items-center" method="post" action="?controller=template&action=render">
       <div class="w-full flex justify-around">
          <input type="text" value="Funkster McFunky" name="name" />
-         <input type="text" value="1" name="template_id" />
-         <label> Preview
+         <select name="template">
+            <?php foreach (new DirectoryIterator($templateDirectory) as $fileInfo): ?>
+            <?php if($fileInfo->isDot() || !$fileInfo->isDir()) { continue; } ?>
+            <option value="<?=$fileInfo->getFilename()?>"><?=ucfirst($fileInfo->getFilename())?></option>
+            <?php endforeach; ?>
+         </select>
+         <label class="text-grey-light"> Preview
          <input type="checkbox" value="1" checked name="preview" />
          </label>
-         <label> Landscape
+         <label class="text-grey-light"> Landscape
          <input type="checkbox" value="1" checked name="landscape" />
          </label>
          <button class="bg-grey border-black" type="submit">Skicka</button>
       </div>
-   </form>
+   </form> */ ?>
 </div>

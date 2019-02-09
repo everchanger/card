@@ -11,6 +11,14 @@ body { margin: 0px; }
    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
 
+@media print {
+   .preview-page {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+   }
+}
+
 .preview-portrait {
    width: 21cm;
    height: 29.7cm;

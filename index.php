@@ -1,7 +1,8 @@
 <?php
-   require 'vendor/autoload.php';
+   // require 'vendor/autoload.php';
 
    include_once('utils/functions.php');
+   include_once('utils/autoloader.php');
    session_start();
 
    $descriptions = [];

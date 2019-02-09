@@ -1,7 +1,7 @@
 <?php
 
 // reference the Dompdf namespace
-use \Dompdf\Dompdf;
+// use \Dompdf\Dompdf;
 
 function loadController($controller, $action) 
 {
@@ -66,7 +66,7 @@ function respondWithStatus($message = 'OK', $status = 200)
    exit;
 }
 
-function renderTemplate($template, $names, $landscape, $preview = false) {
+/*function renderTemplate($template, $names, $landscape, $preview = false) {
    $orientation = $landscape ? 'landscape' : 'portrait';
    $pages = 3;
    ob_start(); 
@@ -91,6 +91,6 @@ function renderTemplate($template, $names, $landscape, $preview = false) {
 
    // Output the generated PDF to Browser
    $dompdf->stream();
-}
+}*/
 
 ?>

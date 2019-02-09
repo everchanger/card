@@ -7,10 +7,6 @@ $navLinksLeft = [
    [
       'view' => 'about',
       'display' => 'Om'
-   ],
-   [
-      'view' => 'style',
-      'display' => 'Stajl'
    ]
 ];
 
@@ -33,6 +29,7 @@ $navLinksRight = [
       <link rel="stylesheet" href="css/font-awesome.min.css">
       <link rel="stylesheet" href="dist/style.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Charm:400,700" rel="stylesheet">
       <link rel="icon" href="../../../../favicon.ico">
       <title>Placeringskort</title>
    </head>
@@ -66,5 +63,14 @@ $navLinksRight = [
       </main>
       <!-- JavaScript -->
       <script type="text/javascript" src="js/common.js"></script>
+      <?php 
+      $filename = substr($view_file_name, strpos($view_file_name, "/") + 1);
+      $filename = substr($filename, 0, strpos($filename, "."));
+      $filename = 'js/' . $filename . '.js'; 
+      if(file_exists($filename)) {
+         echo '<script type="text/javascript" src="' . $filename . '"></script>';
+      }
+      ?>
+      
    </body>
 </html>
