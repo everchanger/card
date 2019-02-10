@@ -1,5 +1,5 @@
 <div class="p-2 bg-white flex flex-col justify-center items-center h-full relative">
-   <div class="absolute w-full"
+   <div class="absolute w-full pin-l"
    style="top: -15%">
       <img
          class="absolute w-1/3"
