@@ -22,7 +22,7 @@
          <span class="mb-4 ">4 ) Skriv ut!</span>
       </div>
    </div>
-   <?php /*<form class="w-full bg-grey-darkest h-16 flex items-center" method="post" action="?controller=template&action=render">
+   <form class="w-full bg-grey-darkest h-16 flex items-center" method="post" action="?controller=template&action=render">
       <div class="w-full flex justify-around">
          <input type="text" value="Funkster McFunky" name="name" />
          <select name="template">
@@ -39,5 +39,5 @@
          </label>
          <button class="bg-grey border-black" type="submit">Skicka</button>
       </div>
-   </form> */ ?>
+   </form>
 </div>

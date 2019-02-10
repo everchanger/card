@@ -66,7 +66,7 @@ function respondWithStatus($message = 'OK', $status = 200)
    exit;
 }
 
-/*function renderTemplate($template, $names, $landscape, $preview = false) {
+function renderTemplate($template, $names, $landscape, $preview = false) {
    $orientation = $landscape ? 'landscape' : 'portrait';
    $pages = 3;
    ob_start(); 
@@ -79,7 +79,7 @@ function respondWithStatus($message = 'OK', $status = 200)
    }
 
    // instantiate and use the dompdf class
-   $dompdf = new \Dompdf\Dompdf();
+   /* $dompdf = new \Dompdf\Dompdf();
    $dompdf->set_option('isHtml5ParserEnabled', true);
    $dompdf->load_html(ob_get_clean()); 
 
@@ -90,7 +90,7 @@ function respondWithStatus($message = 'OK', $status = 200)
    $dompdf->render();
 
    // Output the generated PDF to Browser
-   $dompdf->stream();
-}*/
+   $dompdf->stream();*/
+}
 
 ?>
