@@ -8,7 +8,7 @@ function handleMobileNavbar() {
    const mobileMenu = document.getElementById('mobile-menu');
    const hamburgerButton = document.getElementById('hamburger-button');
 
-   hamburgerButton.addEventListener('click', () => { 
+   hamburgerButton.addEventListener('click', function() { 
       if (mobileMenu.classList.contains('hidden')) {
          mobileMenu.classList.remove('hidden')
       } else {

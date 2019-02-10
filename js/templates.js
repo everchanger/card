@@ -1,28 +1,29 @@
 document.addEventListener("DOMContentLoaded", onDocumentLoaded);
 
-let nameFields = [];
-let cards = [];
+var nameFields = [];
+var cards = [];
 
 function onDocumentLoaded() {
-   const textPreview = document.getElementById('text-preview');
-   const fontSelect = document.getElementById('font-select');
+   var textPreview = document.getElementById('text-preview');
+   var fontSelect = document.getElementById('font-select');
    nameFields = document.getElementsByClassName('name-field');
    cards = document.getElementsByClassName('card');
 }
 
 function textPreviewChanged(value) {
-   for(const field of nameFields) {
+   for(var i = 0; i < nameFields.length; ++i) {
+      var field = nameFields[i];
       field.innerHTML = value;
    }
 }
 
 function selectFontChange(value) {
-   for(const card of cards) {
+   for(var i = 0; i < cards.length; ++i) {
+      var card = cards[i];
       if(value === 'romantic') {
          card.style.fontFamily = 'Charm, cursive';
       } else {
          card.style.fontFamily = 'Roboto, sans-serif';
       }
-      
    }
 }
