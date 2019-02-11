@@ -15,7 +15,10 @@ $pages = count($names) / 8;
       <div class="page <?= $preview ? 'preview-page preview-' . $orientation : '' ?>">
    <?php endif; ?>
          <div class="border border-grey-light" style="width: 10.5cm; height: 7.4cm; float: left">
-            <div class="card w-full" style="height: 3.7cm;">
+            <div
+               class="card w-full"
+               style="height: 3.7cm; transform: rotate(180deg);"
+            >
                <?php include 'uploads/templates/' . $template . '/index.php'; ?>
             </div>
             <div class="w-full border-t-2 border-grey-light" style="height: 3.7cm;">
