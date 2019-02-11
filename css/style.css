@@ -31,6 +31,14 @@ a {
     'xl': '1200px',
 */
 
+.breadcrumbs {
+   @apply p-2 mb-4 mx-2 rounded bg-grey-lighter text-grey-dark shadow-md;
+}
+
+.breadcrumbs span {
+   @apply m-2;
+}
+
 .card {
    width: 300px;
    height: 105px;

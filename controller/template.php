@@ -11,7 +11,7 @@ class template extends base
       $preview = isset($_POST['preview']);
       $landscape = isset($_POST['landscape']);
 
-      echo renderTemplate($template, [$name, $name], $landscape, $preview);
+      echo renderTemplate($template, [$name, $name, $name, $name, $name, $name, $name, $name, $name, $name], $landscape, $preview);
    }
 };
 
