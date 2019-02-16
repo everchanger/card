@@ -72,7 +72,7 @@ function renderTemplate($template, $names, $landscape, $preview = false) {
    ob_start(); 
 
    // Load template
-   include 'uploads/templates/base.php';
+   include TEMPLATE_DIRECTORY . '/base.php';
 
    if($preview) {
       return ob_get_clean();

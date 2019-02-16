@@ -41,15 +41,15 @@
       150 = 425
 */
 
-$templateDirectory = './uploads/templates';
-
-foreach (new DirectoryIterator($templateDirectory) as $fileInfo) {
+foreach (new DirectoryIterator(TEMPLATE_DIRECTORY) as $fileInfo) {
    if($fileInfo->isDot() || !$fileInfo->isDir()) {
       continue;
    }
    ?>
       <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-         <a href="#" class="pt-6 flex flex-col items-center bg-grey-lighter hover:bg-grey-light rounded p-2 shadow-md relative overflow-hidden" >
+         <a href="?controller=template&action=names&template=<?= $fileInfo->getFilename() ?>"
+            class="pt-6 flex flex-col items-center bg-grey-lighter hover:bg-grey-light rounded p-2 shadow-md relative overflow-hidden"
+         >
             <div
                class="absolute z-20 bg-red-light border-2 border-red px-10 py-1 text-white shadow-md"
                style="transform: rotate(-45deg); top: 10px; left: -30px;"
@@ -58,11 +58,13 @@ foreach (new DirectoryIterator($templateDirectory) as $fileInfo) {
                class="card shadow-md"
                style="box-sizing: border-box;"
             >
-               <?php include $templateDirectory . '/' . $fileInfo->getFilename() .'/index.php'; ?>
+               <?php include TEMPLATE_DIRECTORY . '/' . $fileInfo->getFilename() .'/index.php'; ?>
             </div>
             <div class="px-2 mt-4 flex justify-between w-full text-sm">
                <label class="text-xl font-semibold mt-2 text-grey-dark"><?= ucfirst($fileInfo->getFilename()) ?></label>
-               <button class="p-2 text-white bg-green hover:bg-green-dark hover:text-grey-lightest rounded border-2 border-green-light hover:border-green hover:shadow-inner shadow-sm"><i class="fas fa-forward"></i> Använd</button>
+               <button 
+                  class="p-2 text-white bg-green hover:bg-green-dark hover:text-grey-lightest rounded border-2 border-green-light hover:border-green hover:shadow-inner shadow-sm"
+               ><i class="fas fa-forward"></i> Använd</button>
             </div>
          </a>
       </div>

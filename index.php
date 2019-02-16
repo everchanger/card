@@ -3,6 +3,9 @@
 
    include_once('utils/functions.php');
    include_once('utils/autoloader.php');
+
+   define('TEMPLATE_DIRECTORY', './uploads/templates');
+
    session_start();
 
    $descriptions = [];

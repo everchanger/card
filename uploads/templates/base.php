@@ -15,13 +15,13 @@ $pages = count($names) / 8;
       <div class="page <?= $preview ? 'preview-page preview-' . $orientation : '' ?>">
    <?php endif; ?>
          <div class="border border-grey-light" style="width: 10.5cm; height: 7.4cm; float: left">
-            <div
-               class="card w-full"
-               style="height: 3.7cm; transform: rotate(180deg);"
-            >
-               <?php include 'uploads/templates/' . $template . '/index.php'; ?>
+            <div class="w-full border-grey-light" style="height: 3.7cm;">
             </div>
-            <div class="w-full border-t-2 border-grey-light" style="height: 3.7cm;">
+            <div
+               class="card w-full border-t-2 border-b-2"
+               style="height: 3.7cm;"
+            >
+               <?php include TEMPLATE_DIRECTORY . '/' . $template . '/index.php'; ?>
             </div>
          </div>
    <?php if(($index + 1) % 8 === 0 || $index + 1 >= count($names)): ?>

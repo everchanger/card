@@ -4,6 +4,11 @@ namespace controller;
 
 class template extends base 
 {
+   public function names() {
+      $template = filter_input(INPUT_GET, 'template', FILTER_SANITIZE_STRING);
+      $this->respond('names', ['template' => $template, 'name' => 'Joakim Svensson']);
+   }
+
 	public function render() 
 	{
       $template = filter_input(INPUT_POST, 'template', FILTER_SANITIZE_STRING);
